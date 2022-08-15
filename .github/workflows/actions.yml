@@ -78,11 +78,11 @@ jobs:
       - name: Docker build
         run: |
           docker build --platform=linux/amd64 -t pythonapp .
-          docker tag pythonapp "${{acr_fqdn}}/app/pythonapp"
+          docker tag pythonapp $acr_fqdn/app/pythonapp
         working-directory: app
 
       - name: Docker Login and Push
         run: |
           docker login $acr_fqdn --username $client_id --password $client_secret
-          docker push "${{acr_fqdn}}/app/pythonapp"
+          docker push $acr_fqdn/app/pythonapp
         working-directory: app
