@@ -77,7 +77,7 @@ jobs:
           
       - name: Docker build
         run: |
-          docker build --platform=linux/amd64 -t pythonapp .
+          docker build --platform=linux/amd64 -t pythonapp . -f DockerFile
           docker tag pythonapp $acr_fqdn/app/pythonapp
         working-directory: app
 
