@@ -6,7 +6,7 @@ variable "location" {
 
 variable "rgname" {
   description = "Resource group name"
-  default     = "AKS-RG"
+  default     = "azure_infra_rg"
 }
 
 variable "acr" {
