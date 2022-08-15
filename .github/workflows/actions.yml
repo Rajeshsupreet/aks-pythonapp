@@ -47,7 +47,7 @@ jobs:
         working-directory: infra
 
       - name: terraform plan
-        run: terraform plan -var="client_id=${{secrets.client_id}}" -var="client_secret=${{secrets.client_secret}}" -var="tenant_id=${{secrets.tenant_id}}" -var="subscription_id=${{secrets.subscription_id}}" -var="acr=$acr" -var="subscripaks_cluster_nametion_id=$aks_cluster_name" -out=tfplan
+        run: terraform plan -var="client_id=${{secrets.client_id}}" -var="client_secret=${{secrets.client_secret}}" -var="tenant_id=${{secrets.tenant_id}}" -var="subscription_id=${{secrets.subscription_id}}" -var="acr=$acr" -var="aks_cluster_name=$aks_cluster_name" -out=tfplan
         working-directory: infra
 
       - name: terraform apply
