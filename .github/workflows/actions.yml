@@ -117,7 +117,7 @@ jobs:
 
       - name: Install Kubectl Utility
         run: |
-          az aks install-cli
+          sudo az aks install-cli
         working-directory: manifests
 
       - name: Configure ACR  for AKS clusters
