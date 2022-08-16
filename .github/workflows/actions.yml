@@ -134,13 +134,13 @@ jobs:
         run: |
           export image=$acr_fqdn/app/pythonapp
           envsubst < deployment.yml | kubectl apply -f deployment.yml
-          sleep 10s
+          sleep 20s
         working-directory: manifests
       
       - name: Deploy service to AKS Cluster
         run: |
           kubectl apply -f service.yml
-          sleep 10s
+          sleep 20s
         working-directory: manifests
       
       - name: Get Pods
