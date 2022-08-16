@@ -31,3 +31,5 @@ override.tf.json
 *tfvars
 
 .terraform.lock.hcl
+
+.infracost
