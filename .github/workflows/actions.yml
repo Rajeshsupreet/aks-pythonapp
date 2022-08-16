@@ -132,7 +132,8 @@ jobs:
 
       - name: Deploy Python Application
         run: |
-          kubectl apply -f deployment.yml
+          export image=$acr_fqdn/app/pythonapp
+          envsubst < deployment.yml | kubectl apply -f deployment.yml
           sleep 10s
         working-directory: manifests
       
