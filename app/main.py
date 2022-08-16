@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, render_template, request
-from app.form import AddNumbersForm
+from form import AddNumbersForm
 import os
 
 app = Flask(__name__)
