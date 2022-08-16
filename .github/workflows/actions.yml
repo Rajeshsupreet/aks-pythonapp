@@ -78,7 +78,7 @@ jobs:
           
       - name: Docker build
         run: |
-          docker build --platform=linux/amd64 -t pythonapp . -f DockerFile
+          docker build -t pythonapp . -f DockerFile
           docker tag pythonapp $acr_fqdn/app/pythonapp
         working-directory: app
 
@@ -133,11 +133,18 @@ jobs:
       - name: Deploy Python Application
         run: |
           kubectl apply -f deployment.yml
+          sleep 10s
         working-directory: manifests
       
       - name: Deploy service to AKS Cluster
         run: |
           kubectl apply -f service.yml
+          sleep 10s
+        working-directory: manifests
+      
+      - name: Get Pods
+        run: |
+         kubectl get pods
         working-directory: manifests
       
       - name: Get external IP of services
