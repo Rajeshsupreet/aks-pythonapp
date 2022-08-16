@@ -16,6 +16,6 @@ spec:
         "kubernetes.io/os": linux
       containers:
         - name: pythonapp
-          image: $image
+          image: labappacr001.azurecr.io/app/pythonapp
           ports:
           - containerPort: 5000
